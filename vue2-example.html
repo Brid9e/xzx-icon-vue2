@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue2 + XZX Icon 完整示例</title>
+  <title>Vue2 + XZX Icon 内联版本示例</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -43,6 +43,7 @@
       font-size: 12px;
       color: #666;
       text-align: center;
+      word-break: break-all;
     }
     .btn {
       display: inline-flex;
@@ -78,11 +79,6 @@
       border: 1px solid #b7eb8f;
       color: #52c41a;
     }
-    .status.loading {
-      background: #e6f7ff;
-      border: 1px solid #91d5ff;
-      color: #1890ff;
-    }
     .size-demo {
       display: flex;
       align-items: center;
@@ -99,11 +95,11 @@
 <body>
   <div id="app">
     <div class="container">
-      <h1>🎨 Vue2 + XZX Icon 完整示例</h1>
+      <h1>🎨 Vue2 + XZX Icon 内联版本示例</h1>
 
       <!-- 状态显示 -->
-      <div :class="['status', svgLoaded ? 'success' : 'loading']">
-        {{ svgLoaded ? '✅ SVG图标已加载成功' : '⏳ 正在加载SVG图标...' }}
+      <div class="status success">
+        ✅ 内联SVG图标已就绪 (无需加载外部文件)
         <br>
         <small>图标数量: {{ iconCount }}</small>
       </div>
@@ -130,7 +126,7 @@
       <h2>🔘 按钮中使用</h2>
       <div>
         <button class="btn btn-primary" @click="handleSave">
-          <xzx-icon name="check" size="16"></xzx-icon>
+          <xzx-icon name="check-small" size="16"></xzx-icon>
           保存
         </button>
         <button class="btn" @click="handleDelete">
@@ -157,15 +153,12 @@
       </div>
 
       <!-- 所有可用图标 -->
-      <h2>📚 所有可用图标 ({{ allIconIds.length }}个)</h2>
-      <div class="icon-grid" v-if="allIconIds.length > 0">
-        <div class="icon-item" v-for="iconId in allIconIds" :key="iconId">
-          <xzx-icon :name="iconId" size="24"></xzx-icon>
-          <div class="icon-name">{{ iconId }}</div>
+      <h2>📚 所有可用图标 ({{ iconCount }}个)</h2>
+      <div class="icon-grid">
+        <div class="icon-item" v-for="iconName in allIconNames" :key="iconName">
+          <xzx-icon :name="iconName" size="24"></xzx-icon>
+          <div class="icon-name">{{ iconName }}</div>
         </div>
-      </div>
-      <div v-else style="text-align: center; color: #999; padding: 40px;">
-        正在加载图标列表...
       </div>
     </div>
   </div>
@@ -173,60 +166,14 @@
   <!-- Vue.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
+  <!-- 内联图标组件 UMD 版本 - 会自动安装到Vue -->
+  <script src="./lib/index.umd.js"></script>
+
   <script>
-    // 图标组件定义
-    const XzxIcon = {
-      name: 'XzxIcon',
-      props: {
-        name: { type: String, required: true },
-        size: { type: [String, Number], default: '1em' },
-        color: { type: String, default: 'currentColor' }
-      },
-      render(h) {
-        return h('svg', {
-          attrs: {
-            class: 'xzx-icon',
-            width: this.size,
-            height: this.size,
-            'aria-hidden': true
-          },
-          style: {
-            verticalAlign: 'middle',
-            display: 'inline-block',
-            fill: this.color,
-            color: this.color
-          }
-        }, [
-          h('use', {
-            attrs: { 'href': `#${this.name}` }
-          })
-        ])
-      }
-    }
-
-    // 自动加载SVG文件
-    function loadSvgIcons() {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = './xzx-icon-svg.js'
-        script.onload = () => {
-          console.log('✅ SVG文件加载成功')
-          resolve()
-        }
-        script.onerror = (error) => {
-          console.error('❌ SVG文件加载失败:', error)
-          reject(error)
-        }
-        document.head.appendChild(script)
-      })
-    }
-
     // Vue应用
     new Vue({
       el: '#app',
-      components: { XzxIcon },
       data: {
-        svgLoaded: false,
         iconCount: 0,
         basicIcons: [
           { name: 'all-application', size: 24 },
@@ -238,38 +185,26 @@
           { name: 'search', size: 24 },
           { name: 'setting-one', size: 24 }
         ],
-        allIconIds: []
+        allIconNames: []
       },
-      async mounted() {
+      mounted() {
         console.log('🚀 Vue应用启动')
-        try {
-          await loadSvgIcons()
-          this.checkSvgLoaded()
-        } catch (error) {
-          console.error('SVG加载失败:', error)
-          alert('图标文件加载失败，请检查 xzx-icon-svg.js 文件是否存在')
+        console.log('XzxIconVue2:', window.XzxIconVue2)
+
+        // 获取所有图标名称
+        if (window.XzxIconVue2 && window.XzxIconVue2.getIconNames) {
+          this.allIconNames = window.XzxIconVue2.getIconNames()
+          this.iconCount = this.allIconNames.length
+
+          console.log('✅ 内联图标加载完成:', {
+            count: this.iconCount,
+            icons: this.allIconNames.slice(0, 10) // 显示前10个
+          })
+        } else {
+          console.error('❌ XzxIconVue2 未找到或getIconNames方法不存在')
         }
       },
       methods: {
-        checkSvgLoaded() {
-          // 等待一下让SVG文件完全执行
-          setTimeout(() => {
-            const symbols = document.querySelectorAll('symbol')
-            this.svgLoaded = symbols.length > 0
-            this.iconCount = symbols.length
-            this.allIconIds = Array.from(symbols).map(s => s.id).sort()
-
-            console.log('✅ 图标检查完成:', {
-              loaded: this.svgLoaded,
-              count: this.iconCount,
-              icons: this.allIconIds.slice(0, 10) // 显示前10个
-            })
-
-            if (!this.svgLoaded) {
-              console.warn('⚠️ 未检测到图标，请检查SVG文件是否正确加载')
-            }
-          }, 200)
-        },
         handleSave() {
           alert('💾 保存成功!')
         },

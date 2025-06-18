@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内联版本测试</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .test-item {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .icon-demo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 XZX Icon Vue2 内联版本测试</h1>
+
+  <div id="app">
+    <div class="test-item">
+      <h3>✅ 基本功能测试</h3>
+      <div class="icon-demo">
+        <span>相机图标:</span>
+        <xzx-icon name="camera" size="24"></xzx-icon>
+      </div>
+      <div class="icon-demo">
+        <span>搜索图标:</span>
+        <xzx-icon name="search" size="24" color="#1890ff"></xzx-icon>
+      </div>
+      <div class="icon-demo">
+        <span>喜欢图标:</span>
+        <xzx-icon name="like" size="24" color="#ff4d4f"></xzx-icon>
+      </div>
+    </div>
+
+    <div class="test-item">
+      <h3>📏 尺寸测试</h3>
+      <div class="icon-demo">
+        <xzx-icon name="setting-one" size="16"></xzx-icon>
+        <xzx-icon name="setting-one" size="24"></xzx-icon>
+        <xzx-icon name="setting-one" size="32"></xzx-icon>
+        <xzx-icon name="setting-one" size="48"></xzx-icon>
+      </div>
+    </div>
+
+    <div class="test-item">
+      <h3>🎨 颜色测试</h3>
+      <div class="icon-demo">
+        <span>基础颜色:</span>
+        <xzx-icon name="camera" size="32" color="#ff4d4f"></xzx-icon>
+        <xzx-icon name="all-application" size="32" color="#52c41a"></xzx-icon>
+        <xzx-icon name="search" size="32" color="#1890ff"></xzx-icon>
+        <xzx-icon name="like" size="32" color="#faad14"></xzx-icon>
+      </div>
+      <div class="icon-demo">
+        <span>填充色测试:</span>
+        <xzx-icon name="add-one-filled" size="32" fill-color="#ff4d4f"></xzx-icon>
+        <xzx-icon name="check-one-filled" size="32" fill-color="#52c41a"></xzx-icon>
+        <xzx-icon name="close-one-filled" size="32" fill-color="#1890ff"></xzx-icon>
+        <xzx-icon name="help-filled" size="32" fill-color="#faad14"></xzx-icon>
+      </div>
+      <div class="icon-demo">
+        <span>描边+填充:</span>
+        <xzx-icon name="camera" size="32" color="#1890ff" fill-color="#e6f7ff"></xzx-icon>
+        <xzx-icon name="like" size="32" color="#ff4d4f" fill-color="#fff1f0"></xzx-icon>
+        <xzx-icon name="search" size="32" color="#52c41a" fill-color="#f6ffed"></xzx-icon>
+        <xzx-icon name="setting-one" size="32" color="#faad14" fill-color="#fffbe6"></xzx-icon>
+      </div>
+    </div>
+
+    <div class="test-item">
+      <h3>📊 状态信息</h3>
+      <p>图标总数: {{ iconCount }}</p>
+      <p>加载状态: {{ loadStatus }}</p>
+      <p>Vue版本: {{ vueVersion }}</p>
+      <div style="margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 4px;">
+        <h4>🎨 新功能: 填充颜色控制</h4>
+        <p><strong>color</strong>: 控制描边颜色 (默认: currentColor)</p>
+        <p><strong>fill-color</strong>: 控制填充颜色 (默认: null)</p>
+        <p><em>注意：Vue2中使用 fill-color 而不是 fillColor</em></p>
+        <p>可以同时使用两个参数来创建更丰富的视觉效果</p>
+      </div>
+    </div>
+
+    <div class="test-item">
+      <h3>📚 前10个图标</h3>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
+        <div v-for="iconName in firstTenIcons" :key="iconName" style="text-align: center; padding: 10px; border: 1px solid #eee;">
+          <xzx-icon :name="iconName" size="24"></xzx-icon>
+          <br>
+          <small>{{ iconName }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入Vue和图标库 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="./lib/index.umd.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        iconCount: 0,
+        loadStatus: '加载中...',
+        vueVersion: Vue.version,
+        firstTenIcons: []
+      },
+      mounted() {
+        console.log('🚀 Vue应用启动')
+        console.log('Vue版本:', Vue.version)
+        console.log('XzxIconVue2:', window.XzxIconVue2)
+
+        if (window.XzxIconVue2 && window.XzxIconVue2.getIconNames) {
+          const allIcons = window.XzxIconVue2.getIconNames()
+          this.iconCount = allIcons.length
+          this.firstTenIcons = allIcons.slice(0, 10)
+          this.loadStatus = '✅ 加载成功'
+
+          console.log('✅ 图标加载成功:', {
+            总数: this.iconCount,
+            前10个: this.firstTenIcons
+          })
+        } else {
+          this.loadStatus = '❌ 加载失败'
+          console.error('❌ XzxIconVue2 未找到')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

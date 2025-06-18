@@ -3,24 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 
-// 简单的copy插件
-function copy(targets) {
-  return {
-    name: 'copy',
-    generateBundle() {
-      const fs = require('fs')
-      const path = require('path')
-
-      targets.forEach(({ src, dest }) => {
-        const destDir = path.dirname(dest)
-        if (!fs.existsSync(destDir)) {
-          fs.mkdirSync(destDir, { recursive: true })
-        }
-        fs.copyFileSync(src, dest)
-      })
-    }
-  }
-}
+const pkg = require('./package.json')
 
 export default [
   // ES Module build
@@ -30,17 +13,15 @@ export default [
       file: 'lib/index.esm.js',
       format: 'es'
     },
+    external: ['vue'],
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: 'node_modules/**'
-      }),
-      copy([
-        { src: 'xzx-icon-svg.js', dest: 'lib/xzx-icon-svg.js' }
-      ])
-    ],
-    external: ['vue']
+        exclude: 'node_modules/**',
+        babelrc: true
+      })
+    ]
   },
   // CommonJS build
   {
@@ -48,58 +29,51 @@ export default [
     output: {
       file: 'lib/index.js',
       format: 'cjs',
-      exports: 'named'
+      exports: 'auto'
     },
+    external: ['vue'],
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
+        babelrc: true
       })
-    ],
-    external: ['vue']
+    ]
   },
-  // UMD build for CDN
+  // UMD build
   {
     input: 'src/index.js',
     output: {
       file: 'lib/index.umd.js',
       format: 'umd',
-      name: 'XzxIconVue2',
-      exports: 'named',
-      globals: {
-        vue: 'Vue'
-      }
+      name: 'XzxIconVue2'
     },
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
+        babelrc: true
       })
-    ],
-    external: ['vue']
+    ]
   },
-  // Minified UMD build
+  // UMD build (minified)
   {
     input: 'src/index.js',
     output: {
       file: 'lib/index.umd.min.js',
       format: 'umd',
-      name: 'XzxIconVue2',
-      exports: 'named',
-      globals: {
-        vue: 'Vue'
-      }
+      name: 'XzxIconVue2'
     },
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
+        babelrc: true
       }),
       terser()
-    ],
-    external: ['vue']
+    ]
   }
 ]

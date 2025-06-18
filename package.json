@@ -1,48 +1,57 @@
 {
   "name": "xzx-icon-vue2",
-  "version": "1.0.0",
-  "description": "Vue2图标组件库，自动注入SVG图标文件",
+  "version": "1.1.0",
+  "description": "Vue2 icon component with inline SVG support for Xzx Design Icons",
   "main": "lib/index.js",
-  "module": "src/index.js",
+  "module": "lib/index.esm.js",
+  "unpkg": "lib/index.umd.js",
+  "jsdelivr": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib",
     "src",
-    "xzx-icon-svg.js",
     "README.md"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "build:dev": "rollup -c --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node scripts/generate-inline-icons.js",
+    "build": "npm run generate && rollup -c",
+    "dev": "rollup -c --watch",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "vue",
     "vue2",
     "icon",
     "svg",
+    "xzx-icon",
+    "inline",
     "component"
   ],
-  "author": "",
+  "author": "Your Name <your.email@example.com>",
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^2.0.0"
+    "vue": "^2.6.0"
+  },
+  "dependencies": {
+    "@xzx-design/icons-svg": "^0.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/plugin-transform-object-rest-spread": "^7.0.0",
-    "rollup": "^2.0.0",
-    "rollup-plugin-babel": "^4.0.0",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-node-resolve": "^5.0.0",
-    "rollup-plugin-terser": "^7.0.0"
+    "@babel/core": "^7.23.0",
+    "@babel/plugin-transform-object-rest-spread": "^7.22.15",
+    "@babel/preset-env": "^7.23.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/xzx-icon-vue2.git"
+    "url": "https://github.com/yourusername/xzx-icon-vue2.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/xzx-icon-vue2/issues"
+    "url": "https://github.com/yourusername/xzx-icon-vue2/issues"
   },
-  "homepage": "https://github.com/your-username/xzx-icon-vue2#readme"
+  "homepage": "https://github.com/yourusername/xzx-icon-vue2#readme"
 }

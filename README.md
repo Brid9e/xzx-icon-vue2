@@ -1,40 +1,37 @@
-# XZX Icon Vue2
+# xzx-icon-vue2
 
-Vue2图标组件库，支持自动注入SVG图标文件。
+Vue2 图标组件库，支持内联SVG，无需外部文件。基于 `@xzx-design/icons-svg` 包中的70+个精美图标。
 
-## 特性
+## ✨ 特性
 
-- 🎨 丰富的图标库
-- 🚀 自动注入SVG图标文件
-- 📦 支持多种引入方式
-- 🎯 基于Vue2开发
-- 💡 易于使用和扩展
+- 🚀 **内联SVG** - 所有图标直接内嵌在组件中，无需加载外部文件
+- 📦 **轻量级** - 只包含必要的图标数据
+- 🎨 **可定制** - 支持自定义尺寸和颜色
+- 🔧 **易使用** - 简单的API，支持多种安装方式
+- 📱 **响应式** - 支持不同尺寸的图标显示
+- 🌐 **CDN友好** - 支持CDN引入，自动安装
 
-## 安装
+## 📦 安装
 
 ```bash
 npm install xzx-icon-vue2
 ```
 
-## 使用方法
+## 🚀 使用方法
 
-### 1. 全局注册（推荐）
+### 方式1: 全局注册 (推荐)
 
 ```javascript
 import Vue from 'vue'
 import XzxIcon from 'xzx-icon-vue2'
 
-// 全局注册，会自动注入SVG图标文件
 Vue.use(XzxIcon)
 
-// 可以自定义组件名和SVG文件路径
-Vue.use(XzxIcon, {
-  componentName: 'MyIcon', // 默认为 'XzxIcon'
-  svgPath: '/path/to/your/xzx-icon-svg.js' // 可选，自定义SVG文件路径
-})
+// 现在可以在任何组件中使用
+// <xzx-icon name="camera" size="24" color="#1890ff"></xzx-icon>
 ```
 
-### 2. 局部注册
+### 方式2: 按需引入
 
 ```javascript
 import { XzxIcon } from 'xzx-icon-vue2'
@@ -46,120 +43,139 @@ export default {
 }
 ```
 
-### 3. CDN引入
+### 方式3: CDN引入
 
 ```html
-<!-- Vue.js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xzx-icon-vue2/lib/index.umd.js"></script>
+</head>
+<body>
+  <div id="app">
+    <xzx-icon name="camera" size="32" color="#1890ff"></xzx-icon>
+  </div>
 
-<!-- XZX Icon Vue2 -->
-<script src="https://unpkg.com/xzx-icon-vue2/lib/index.umd.min.js"></script>
-
-<!-- 图标会自动注册为全局组件 -->
+  <script>
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
 ```
 
-## 组件API
+## 📖 组件API
 
 ### Props
 
-| 参数  | 说明     | 类型           | 默认值        |
-|-------|----------|----------------|---------------|
-| name  | 图标名称 | String         | -             |
-| size  | 图标大小 | String/Number  | '16'          |
-| color | 图标颜色 | String         | 'currentColor'|
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| name | 图标名称 | `string` | - |
+| size | 图标尺寸 | `string \| number` | `'1em'` |
+| color | 图标颜色 | `string` | `'currentColor'` |
 
 ### 示例
 
 ```vue
 <template>
   <div>
-    <!-- 基本用法 -->
-    <xzx-icon name="left"></xzx-icon>
+    <!-- 基本使用 -->
+    <xzx-icon name="camera"></xzx-icon>
 
-    <!-- 设置大小 -->
-    <xzx-icon name="right" size="24"></xzx-icon>
+    <!-- 自定义尺寸 -->
+    <xzx-icon name="like" size="32"></xzx-icon>
+    <xzx-icon name="search" size="1.5em"></xzx-icon>
 
-    <!-- 设置颜色 -->
-    <xzx-icon name="like" color="#ff4757"></xzx-icon>
+    <!-- 自定义颜色 -->
+    <xzx-icon name="heart" color="#ff4d4f"></xzx-icon>
+    <xzx-icon name="star" color="rgb(24, 144, 255)"></xzx-icon>
 
-    <!-- 组合使用 -->
-    <xzx-icon name="camera" size="32" color="#3742fa"></xzx-icon>
+    <!-- 在按钮中使用 -->
+    <button>
+      <xzx-icon name="upload" size="16"></xzx-icon>
+      上传文件
+    </button>
   </div>
 </template>
 ```
 
-## 可用图标
+## 🎨 可用图标
 
-组件库包含以下图标：
+本库包含70+个图标，包括：
 
-- `all-application` - 应用图标
-- `left` - 左箭头
-- `right` - 右箭头
-- `more` - 更多
-- `camera` - 相机
-- `like` - 喜欢
-- `preview-open` - 预览打开
-- `preview-close-one` - 预览关闭
-- `refresh` - 刷新
-- `setting-one` - 设置
-- `search` - 搜索
-- `close` - 关闭
-- `delete` - 删除
-- `download` - 下载
-- `upload` - 上传
-- ... 更多图标
+- **基础图标**: `camera`, `search`, `upload`, `download`, `delete`, `edit`
+- **导航图标**: `left`, `right`, `up`, `down`, `close`, `more`
+- **状态图标**: `check`, `error`, `warning`, `info`, `loading`
+- **社交图标**: `like`, `share`, `comment`, `star`
+- **文件图标**: `file`, `folder`, `image`, `video`, `audio`
+- **业务图标**: `user`, `setting`, `home`, `mail`, `phone`
 
-## 高级用法
-
-### 手动加载SVG图标
-
-如果你需要手动控制SVG图标的加载时机：
+### 获取所有图标名称
 
 ```javascript
-import { loadSvgIcons } from 'xzx-icon-vue2'
+import { getIconNames } from 'xzx-icon-vue2'
 
-// 手动加载SVG图标
-loadSvgIcons('/path/to/your/xzx-icon-svg.js')
-  .then(() => {
-    console.log('SVG图标加载成功')
-  })
-  .catch(error => {
-    console.error('SVG图标加载失败:', error)
-  })
+const allIcons = getIconNames()
+console.log(allIcons) // ['camera', 'search', 'upload', ...]
 ```
 
-### 自定义SVG文件路径
+## 🔧 高级用法
+
+### 自定义组件名称
 
 ```javascript
 Vue.use(XzxIcon, {
-  svgPath: 'https://your-cdn.com/xzx-icon-svg.js'
+  componentName: 'MyIcon' // 默认是 'XzxIcon'
 })
+
+// 使用
+// <my-icon name="camera"></my-icon>
 ```
 
-## 工作原理
+### 访问图标数据
 
-1. 当你调用 `Vue.use(XzxIcon)` 时，插件会自动在页面的 `<head>` 中添加一个 `<script>` 标签
-2. 这个 `<script>` 标签会加载 `xzx-icon-svg.js` 文件
-3. `xzx-icon-svg.js` 文件包含所有的SVG图标定义，会自动注入到页面中
-4. 图标组件通过 `<use>` 标签引用这些SVG定义
+```javascript
+import { iconData } from 'xzx-icon-vue2'
 
-## 开发
-
-```bash
-# 安装依赖
-npm install
-
-# 构建
-npm run build
-
-# 开发模式
-npm run build:dev
+console.log(iconData['camera'])
+// { viewBox: "0 0 48 48", content: "<path...>" }
 ```
 
-## 许可证
+## 🎯 与旧版本的区别
+
+### v1.1.0+ (内联版本)
+- ✅ 无需外部SVG文件
+- ✅ 更快的加载速度
+- ✅ 更好的缓存策略
+- ✅ 避免路径解析问题
+
+### v1.0.x (外部文件版本)
+- ❌ 需要加载 `xzx-icon-svg.js` 文件
+- ❌ 可能存在路径解析问题
+- ❌ 需要处理文件加载失败的情况
+
+## 📊 包大小
+
+- **ES Module**: ~38KB
+- **CommonJS**: ~38KB
+- **UMD**: ~39KB
+- **UMD (压缩)**: ~34KB
+
+## 🔗 相关链接
+
+- [图标源文件](https://www.npmjs.com/package/@xzx-design/icons-svg)
+- [Vue.js 官网](https://vuejs.org/)
+
+## 📄 许可证
 
 MIT License
 
-## 贡献
+## 🤝 贡献
 
-欢迎提交 Issue 和 Pull Request。
+欢迎提交 Issues 和 Pull Requests！
+
+---
+
+**注意**: 本包专为 Vue 2.x 设计，如需 Vue 3 支持，请查看其他相关包。
