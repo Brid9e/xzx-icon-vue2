@@ -1,6 +1,6 @@
 {
   "name": "xzx-icon-vue2",
-  "version": "1.1.0",
+  "version": "0.0.5",
   "description": "Vue2 icon component with inline SVG support for Xzx Design Icons",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
