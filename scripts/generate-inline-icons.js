@@ -10,6 +10,7 @@ function generateInlineIcons() {
   const files = fs.readdirSync(iconsDir).filter((file) => file.endsWith('.svg'))
 
   const icons = {}
+  let optimizedCount = 0
 
   files.forEach((file) => {
     const iconName = path.basename(file, '.svg')
@@ -18,7 +19,39 @@ function generateInlineIcons() {
     // 提取SVG内容（去掉外层svg标签，只保留内部path等元素）
     const match = svgContent.match(/<svg[^>]*>(.*?)<\/svg>/s)
     if (match) {
-      const innerContent = match[1].trim()
+      let innerContent = match[1].trim()
+      const originalContent = innerContent
+
+      // 自动替换颜色属性为currentColor
+      // 替换各种格式的黑色为 currentColor
+      innerContent = innerContent.replace(/stroke="#0{3,6}"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="#0{3,6}"/g, 'fill="currentColor"')
+
+      // 替换其他十六进制颜色为currentColor
+      innerContent = innerContent.replace(/stroke="#[a-fA-F0-9]{6}"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/stroke="#[a-fA-F0-9]{3}"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="#[a-fA-F0-9]{6}"/g, 'fill="currentColor"')
+      innerContent = innerContent.replace(/fill="#[a-fA-F0-9]{3}"/g, 'fill="currentColor"')
+
+      // 替换 RGB/RGBA 颜色
+      innerContent = innerContent.replace(/stroke="rgb\([^)]+\)"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="rgb\([^)]+\)"/g, 'fill="currentColor"')
+      innerContent = innerContent.replace(/stroke="rgba\([^)]+\)"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="rgba\([^)]+\)"/g, 'fill="currentColor"')
+
+      // 替换命名颜色 (除了none, inherit, currentColor)
+      innerContent = innerContent.replace(/stroke="(?!none|inherit|currentColor|transparent)[a-zA-Z]+"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="(?!none|inherit|currentColor|transparent)[a-zA-Z]+"/g, 'fill="currentColor"')
+
+      // 处理 HSL 颜色
+      innerContent = innerContent.replace(/stroke="hsl\([^)]+\)"/g, 'stroke="currentColor"')
+      innerContent = innerContent.replace(/fill="hsl\([^)]+\)"/g, 'fill="currentColor"')
+
+      // 统计优化数量
+      if (originalContent !== innerContent) {
+        optimizedCount++
+      }
+
       // 提取viewBox
       const viewBoxMatch = svgContent.match(/viewBox="([^"]*)"/)
       const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 48 48'
@@ -113,7 +146,7 @@ export function getIconNames() {
 
   fs.writeFileSync(outputFile, output, 'utf-8')
   console.log(`✅ 生成内联图标文件: ${outputFile}`)
-  console.log(`📊 共处理 ${files.length} 个图标`)
+  console.log(`📊 共处理 ${files.length} 个图标，其中 ${optimizedCount} 个图标被优化`)
 }
 
 generateInlineIcons()

@@ -3,55 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FillColor 测试</title>
+  <title>颜色优化测试</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      line-height: 1.6;
     }
-    .test-row {
+    .test-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .icon-row {
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin: 20px 0;
+      gap: 15px;
+      margin: 10px 0;
       padding: 10px;
-      border: 1px solid #ddd;
+      background: white;
       border-radius: 4px;
     }
+    .icon-label {
+      min-width: 120px;
+      font-weight: bold;
+    }
+    .icon-examples {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .color-demo {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .demo-red { color: #ff4d4f; background: #fff1f0; }
+    .demo-blue { color: #1890ff; background: #e6f7ff; }
+    .demo-green { color: #52c41a; background: #f6ffed; }
+    .demo-orange { color: #faad14; background: #fffbe6; }
   </style>
 </head>
 <body>
-  <h1>🎨 FillColor 参数测试</h1>
+  <h1>🎨 XZX Icon Vue2 颜色优化测试</h1>
 
   <div id="app">
-    <div class="test-row">
-      <span>基础图标 (无fillColor):</span>
-      <xzx-icon name="add-one-filled" size="32"></xzx-icon>
+    <div class="test-section">
+      <h2>✨ 自动颜色继承测试</h2>
+      <p>测试 SVG 中的固定颜色是否已被替换为 currentColor，能否正确继承父元素颜色</p>
+
+      <div class="icon-row">
+        <div class="icon-label">相机图标:</div>
+        <div class="icon-examples">
+          <div class="color-demo demo-red">
+            <xzx-icon name="camera" size="32"></xzx-icon>
+            <br>红色继承
+          </div>
+          <div class="color-demo demo-blue">
+            <xzx-icon name="camera" size="32"></xzx-icon>
+            <br>蓝色继承
+          </div>
+          <div class="color-demo demo-green">
+            <xzx-icon name="camera" size="32"></xzx-icon>
+            <br>绿色继承
+          </div>
+        </div>
+      </div>
+
+      <div class="icon-row">
+        <div class="icon-label">搜索图标:</div>
+        <div class="icon-examples">
+          <div class="color-demo demo-red">
+            <xzx-icon name="search" size="32"></xzx-icon>
+            <br>红色继承
+          </div>
+          <div class="color-demo demo-blue">
+            <xzx-icon name="search" size="32"></xzx-icon>
+            <br>蓝色继承
+          </div>
+          <div class="color-demo demo-orange">
+            <xzx-icon name="search" size="32"></xzx-icon>
+            <br>橙色继承
+          </div>
+        </div>
+      </div>
+
+      <div class="icon-row">
+        <div class="icon-label">喜欢图标:</div>
+        <div class="icon-examples">
+          <div class="color-demo demo-green">
+            <xzx-icon name="like" size="32"></xzx-icon>
+            <br>绿色继承
+          </div>
+          <div class="color-demo demo-orange">
+            <xzx-icon name="like" size="32"></xzx-icon>
+            <br>橙色继承
+          </div>
+          <div class="color-demo demo-blue">
+            <xzx-icon name="like" size="32"></xzx-icon>
+            <br>蓝色继承
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="test-row">
-      <span>红色填充:</span>
-      <xzx-icon name="add-one-filled" size="32" fillColor="#ff4d4f"></xzx-icon>
+    <div class="test-section">
+      <h2>🎯 精确颜色控制测试</h2>
+      <p>测试使用 color 和 fill-color 参数精确控制颜色</p>
+
+      <div class="icon-row">
+        <div class="icon-label">仅描边色:</div>
+        <div class="icon-examples">
+          <xzx-icon name="camera" size="32" color="#ff4d4f"></xzx-icon>
+          <xzx-icon name="search" size="32" color="#1890ff"></xzx-icon>
+          <xzx-icon name="like" size="32" color="#52c41a"></xzx-icon>
+          <xzx-icon name="setting-one" size="32" color="#faad14"></xzx-icon>
+        </div>
+      </div>
+
+      <div class="icon-row">
+        <div class="icon-label">仅填充色:</div>
+        <div class="icon-examples">
+          <xzx-icon name="add-one-filled" size="32" fill-color="#ff4d4f"></xzx-icon>
+          <xzx-icon name="check-one-filled" size="32" fill-color="#52c41a"></xzx-icon>
+          <xzx-icon name="close-one-filled" size="32" fill-color="#1890ff"></xzx-icon>
+          <xzx-icon name="help-filled" size="32" fill-color="#faad14"></xzx-icon>
+        </div>
+      </div>
+
+      <div class="icon-row">
+        <div class="icon-label">描边+填充:</div>
+        <div class="icon-examples">
+          <xzx-icon name="camera" size="32" color="#1890ff" fill-color="#e6f7ff"></xzx-icon>
+          <xzx-icon name="like" size="32" color="#ff4d4f" fill-color="#fff1f0"></xzx-icon>
+          <xzx-icon name="search" size="32" color="#52c41a" fill-color="#f6ffed"></xzx-icon>
+          <xzx-icon name="setting-one" size="32" color="#faad14" fill-color="#fffbe6"></xzx-icon>
+        </div>
+      </div>
     </div>
 
-    <div class="test-row">
-      <span>绿色填充:</span>
-      <xzx-icon name="check-one-filled" size="32" fillColor="#52c41a"></xzx-icon>
-    </div>
-
-    <div class="test-row">
-      <span>蓝色填充:</span>
-      <xzx-icon name="close-one-filled" size="32" fillColor="#1890ff"></xzx-icon>
-    </div>
-
-    <div class="test-row">
-      <span>描边+填充:</span>
-      <xzx-icon name="camera" size="32" color="#ff4d4f" fillColor="#fff1f0"></xzx-icon>
-    </div>
-
-    <div class="test-row">
-      <span>组件状态:</span>
-      <span>{{ componentLoaded ? '✅ 组件已加载' : '❌ 组件未加载' }}</span>
+    <div class="test-section">
+      <h2>📊 优化统计</h2>
+      <div class="icon-row">
+        <div class="icon-label">总图标数:</div>
+        <div>{{ iconCount }}</div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-label">优化说明:</div>
+        <div>SVG中的固定颜色已自动替换为 currentColor，使图标能够继承父元素颜色</div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-label">使用方式:</div>
+        <div>
+          <ul style="margin: 0;">
+            <li><code>color</code>: 控制描边/线条颜色</li>
+            <li><code>fill-color</code>: 控制填充颜色</li>
+            <li>父元素 CSS color: 自动继承颜色</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -63,23 +176,15 @@
     new Vue({
       el: '#app',
       data: {
-        componentLoaded: false
+        iconCount: 0
       },
       mounted() {
-        console.log('🚀 开始测试')
-        console.log('XzxIconVue2:', window.XzxIconVue2)
+        console.log('🚀 颜色优化测试页面启动')
 
-        if (window.XzxIconVue2) {
-          this.componentLoaded = true
-          console.log('✅ 组件加载成功')
-
-          // 检查fillColor是否存在
-          const component = this.$options.components.XzxIcon || window.XzxIconVue2.XzxIcon
-          if (component && component.props && component.props.fillColor) {
-            console.log('✅ fillColor 参数存在:', component.props.fillColor)
-          } else {
-            console.error('❌ fillColor 参数不存在')
-          }
+        if (window.XzxIconVue2 && window.XzxIconVue2.getIconNames) {
+          const allIcons = window.XzxIconVue2.getIconNames()
+          this.iconCount = allIcons.length
+          console.log('✅ 加载了', this.iconCount, '个图标')
         } else {
           console.error('❌ XzxIconVue2 未找到')
         }

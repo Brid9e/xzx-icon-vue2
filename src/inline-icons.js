@@ -84,7 +84,7 @@ export const iconData = {
   },
   "female-filled": {
     "viewBox": "0 0 48 48",
-    "content": "<g data-follow-stroke=\"currentColor\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linejoin=\"round\"\n    clip-path=\"url(#a)\">\n    <path data-follow-fill=\"currentColor\"\n      d=\"M38.379 9.851c-5.468-5.467-14.332-5.467-19.8 0a13.956 13.956 0 0 0-4.1 9.9 13.96 13.96 0 0 0 4.1 9.9c5.468 5.467 14.332 5.467 19.8 0 5.467-5.468 5.467-14.332 0-19.8Z\"\n      fill=\"currentColor\" />\n    <path d=\"M18.464 29.535 5.736 42.263m13.435-.707L6.443 28.828\" stroke-linecap=\"round\" />\n  </g>\n  <defs>\n    <clipPath id=\"a\">\n      <path d=\"M0 0h48v48H0z\" fill=\"#FFF\" />\n    </clipPath>\n  </defs>"
+    "content": "<g data-follow-stroke=\"currentColor\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linejoin=\"round\"\n    clip-path=\"url(#a)\">\n    <path data-follow-fill=\"currentColor\"\n      d=\"M38.379 9.851c-5.468-5.467-14.332-5.467-19.8 0a13.956 13.956 0 0 0-4.1 9.9 13.96 13.96 0 0 0 4.1 9.9c5.468 5.467 14.332 5.467 19.8 0 5.467-5.468 5.467-14.332 0-19.8Z\"\n      fill=\"currentColor\" />\n    <path d=\"M18.464 29.535 5.736 42.263m13.435-.707L6.443 28.828\" stroke-linecap=\"round\" />\n  </g>\n  <defs>\n    <clipPath id=\"a\">\n      <path d=\"M0 0h48v48H0z\" fill=\"currentColor\" />\n    </clipPath>\n  </defs>"
   },
   "female": {
     "viewBox": "0 0 48 48",
