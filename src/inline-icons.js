@@ -14,6 +14,10 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<path\n    data-follow-fill=\"currentColor\"\n    fill-rule=\"evenodd\"\n    clip-rule=\"evenodd\"\n    d=\"M44 24c0 11.046-8.954 20-20 20S4 35.046 4 24 12.954 4 24 4s20 8.954 20 20Zm-18-9a2 2 0 1 0-4 0v13.172l-5.586-5.586a2 2 0 1 0-2.828 2.828l9 9a2 2 0 0 0 2.828 0l9-9a2 2 0 1 0-2.828-2.828L26 28.172V15Z\"\n    fill=\"currentColor\"\n  />"
   },
+  "basicinformation": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M5 22h14a1 1 0 0 0 1-1V7h-5V2H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M8 18.5h8\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"m15 2 5 5\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
   "bus-filled": {
     "viewBox": "0 0 16 16",
     "content": "<path data-follow-fill=\"currentColor\"\n    d=\"M11.333 13.333H4.667V14a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 14V8h-.667V5.333H2v-2C2 2.597 2.597 2 3.333 2h9.334C13.403 2 14 2.597 14 3.333v2h.667V8H14v6a.667.667 0 0 1-.667.667H12a.667.667 0 0 1-.667-.667v-.667Zm-8-10V8h9.334V3.333H3.333ZM5 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z\"\n    fill=\"currentColor\" />"
@@ -22,9 +26,17 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<rect stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" rx=\"2\" height=\"36\"\n    width=\"40\" y=\"8\" x=\"4\" data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M4 20h40M4 32h40M17 4v8M31 4v8M17 20v24M31 20v24M44 13v26M4 13v26M14 44h20\" data-follow-stroke=\"currentColor\" />"
   },
+  "calendar2": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M20 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M8.5 2v4M15.5 2v4M22 11H3\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
   "camera": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"m15 12 3-6h12l3 6H15Z\"\n    data-follow-stroke=\"currentColor\" />\n  <rect stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" rx=\"3\" height=\"30\" width=\"40\" y=\"12\" x=\"4\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M24 35a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\n    data-follow-stroke=\"currentColor\" />"
+  },
+  "campus": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"m12 3 7.5 6v12h-15V9L12 3Zm0 0L2 11m10-8 10 8M9 16.5h6\"\n  />\n  <path\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M4.5 21h15\"\n  />"
   },
   "caution": {
     "viewBox": "0 0 48 48",
@@ -122,6 +134,10 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M40 23v-9L31 4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2h12\" data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"m26 38 6 5 9-11M30 4v10h10\" data-follow-stroke=\"currentColor\" />"
   },
+  "groupchat": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M5.55 17.524v3l3-2s9.5.5 10-7.5c0-5.215-4.5-7.167-7-7.5-6-.5-10 2.972-10 7.5 0 4 2.5 5.833 4 6.5Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M21.05 9.524c1.333 1.667 2.9 5.7-1.5 8.5v2l-2.5-1.5\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <circle\n    fill=\"currentColor\"\n    r=\"1\"\n    cy=\"10.524\"\n    cx=\"6.05\"\n    data-follow-fill=\"currentColor\"\n  />\n  <circle\n    fill=\"currentColor\"\n    r=\"1\"\n    cy=\"10.524\"\n    cx=\"10.05\"\n    data-follow-fill=\"currentColor\"\n  />\n  <circle\n    fill=\"currentColor\"\n    r=\"1\"\n    cy=\"10.524\"\n    cx=\"14.05\"\n    data-follow-fill=\"currentColor\"\n  />"
+  },
   "help-filled": {
     "viewBox": "0 0 48 48",
     "content": "<path\n    data-follow-fill=\"currentColor\"\n    fill=\"currentColor\"\n    d=\"M31.656 42.482A19.937 19.937 0 0 1 24 44a19.938 19.938 0 0 1-14.142-5.858A19.937 19.937 0 0 1 4 24 19.938 19.938 0 0 1 9.858 9.858 19.938 19.938 0 0 1 24 4a19.936 19.936 0 0 1 14.142 5.858A19.94 19.94 0 0 1 44 24a19.937 19.937 0 0 1-5.858 14.142 19.936 19.936 0 0 1-6.486 4.34ZM20.939 11.234A8 8 0 1 1 26 26.371v2.254a2 2 0 1 1-4 0v-4a2 2 0 0 1 2-2 4 4 0 1 0-4-4 2 2 0 1 1-4 0 8 8 0 0 1 4.939-7.391ZM24 37.625a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z\"\n    clip-rule=\"evenodd\"\n    fill-rule=\"evenodd\"\n  />"
@@ -185,6 +201,10 @@ export const iconData = {
   "more": {
     "viewBox": "0 0 48 48",
     "content": "<circle fill=\"currentColor\" r=\"3\" cy=\"24\" cx=\"12\" data-follow-fill=\"currentColor\" />\n  <circle fill=\"currentColor\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"currentColor\" />\n  <circle fill=\"currentColor\" r=\"3\" cy=\"24\" cx=\"36\" data-follow-fill=\"currentColor\" />"
+  },
+  "oneclickprocessing": {
+    "viewBox": "0 0 25 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M4.5 15 4 20l5-1.5L18.5 9l-4-4-10 10Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M16.5 17H22m-9 3h9M17 3l3.5 3.5\"\n    data-follow-stroke=\"currentColor\"\n  />"
   },
   "pic": {
     "viewBox": "0 0 48 48",
@@ -261,6 +281,10 @@ export const iconData = {
   "translation": {
     "viewBox": "0 0 48 48",
     "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"m17 32 2.188-5M31 32l-2.188-5m-9.625 0L24 16l4.813 11m-9.625 0h9.625\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M43.2 20c-1.853-9.129-9.924-16-19.6-16C13.924 4 5.853 10.871 4 20l6-2M4 28c1.853 9.129 9.924 16 19.6 16 9.676 0 17.747-6.871 19.6-16L38 30\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
+  "translation2": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-width=\".1\"\n    stroke=\"currentColor\"\n    fill=\"currentColor\"\n    d=\"M10.578 10.065a.451.451 0 0 1 .201.19c.085.143.168.395.25.75l.07.259c.077.258.178.513.301.765.156.318.379.665.665 1.042.066-.1.14-.216.224-.353l.043.026-.042-.026c.1-.164.203-.412.307-.745v-.001a8.99 8.99 0 0 0 .257-1.005l.079-.42c.017-.112.026-.193.028-.246a1.91 1.91 0 0 1 .014-.176.122.122 0 0 1 .011-.03l.014-.03h-2.422Zm2.273-1.432a.56.56 0 0 1-.017.162l-.001.002-.024.065H15.7c.188 0 .346.05.468.158.12.106.19.243.207.408a.536.536 0 0 1-.165.445c-.126.13-.298.192-.51.192h-1.458l.01.014.02.042a.366.366 0 0 1 .011.05c.006.036.01.08.012.133.003.056-.003.143-.019.256-.015.114-.04.26-.075.435l-.156.769c-.018.08-.045.176-.08.29l-.126.398c-.098.298-.201.548-.307.75-.102.191-.27.45-.5.778.346.3.75.54 1.216.715.484.181.891.31 1.223.383h.002c.336.078.556.138.652.18a.711.711 0 0 1 .257.187l.054.08c.047.09.068.213.07.362.008.207-.057.372-.199.485a.8.8 0 0 1-.524.166c-.156.003-.372-.035-.647-.114l-.296-.093a12.5 12.5 0 0 1-.913-.339l-.293-.127a5.379 5.379 0 0 1-1.011-.585v-.001l-.532-.374c-.48.346-.938.628-1.378.843-.448.222-.9.417-1.358.583-.456.166-.803.253-1.037.256v.001a1.04 1.04 0 0 1-.423-.059.388.388 0 0 1-.187-.152l-.033-.072c-.06-.174-.089-.312-.081-.41l.01-.074a.685.685 0 0 1 .084-.216l.001-.002a.808.808 0 0 1 .312-.261c.146-.075.429-.171.845-.288a7.147 7.147 0 0 0 1.188-.445l.283-.145c.27-.146.539-.317.809-.51-.442-.562-.738-1.03-.887-1.401-.15-.375-.295-.766-.435-1.17a5.14 5.14 0 0 1-.154-.515 1.054 1.054 0 0 1-.035-.327.628.628 0 0 1 .207-.387.53.53 0 0 1 .14-.09H8.25a.662.662 0 0 1-.495-.19l-.001-.002a.596.596 0 0 1-.16-.466v-.001a.556.556 0 0 1 .205-.396l.098-.065a.735.735 0 0 1 .353-.082h3.334c-.03-.045-.056-.079-.071-.106l-.001-.002c-.024-.044-.09-.184-.197-.418a6.62 6.62 0 0 1-.12-.287 1.497 1.497 0 0 1-.032-.092.305.305 0 0 1-.014-.063V7.89c0-.053.013-.119.036-.195l.033-.07a.7.7 0 0 1 .217-.202.717.717 0 0 1 .431-.125h.001c.14.01.263.06.366.149.105.085.219.249.34.483.12.233.194.389.225.463.031.076.049.155.053.236v.003Z\"\n    data-follow-fill=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M20.8 10.5c-.851-4.28-4.557-7.5-9-7.5s-8.15 3.22-9 7.5l2.755-.938M2.8 13.5c.85 4.28 4.557 7.5 9 7.5s8.149-3.22 9-7.5l-2.388.938\"\n  />"
   },
   "tushuguan": {
     "viewBox": "0 0 24 24",
