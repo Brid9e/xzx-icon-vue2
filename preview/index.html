@@ -323,7 +323,7 @@
     <footer class="footer">
       <p>
         基于 <a href="https://www.npmjs.com/package/@xzx-design/icons-svg" target="_blank" rel="noopener">@xzx-design/icons-svg</a> 构建
-        | 点击图标复制 Vue 代码
+        | 点击图标复制名称
       </p>
     </footer>
   </div>
@@ -339,7 +339,8 @@
 
     // 复制图标代码功能
     function copyIconCode(iconName, element) {
-      const code = `<xzx-icon name="${iconName}" size="24"></xzx-icon>`
+      // 只复制图标名称，不包含标签
+      const code = iconName
 
       // 创建临时元素复制到剪贴板
       const textarea = document.createElement('textarea')
@@ -358,7 +359,7 @@
       setTimeout(() => {
         element.classList.remove('copied')
         tooltip.classList.remove('show')
-        tooltip.textContent = '点击复制代码'
+        tooltip.textContent = '点击复制名称'
       }, 1500)
 
       // 更新统计
@@ -531,7 +532,7 @@
                   <xzx-icon name="${iconName}" size="32"></xzx-icon>
                 </div>
                 <div class="icon-name">${iconName}</div>
-                <div class="copy-tooltip">点击复制代码</div>
+                <div class="copy-tooltip">点击复制名称</div>
               </div>
             `).join('')
 

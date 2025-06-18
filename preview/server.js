@@ -106,7 +106,7 @@ app.get('/simple', (req, res) => {
             : [...this.allIcons]
         },
         copy(name) {
-          navigator.clipboard.writeText(\`<xzx-icon name="\${name}" size="24"></xzx-icon>\`)
+          navigator.clipboard.writeText(name)
           console.log('复制:', name)
         }
       }
