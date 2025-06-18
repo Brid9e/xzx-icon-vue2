@@ -26,6 +26,31 @@ import XzxIconVue2 from 'xzx-icon-vue2'
 Vue.use(XzxIconVue2)
 ```
 
+### 预览所有图标
+
+安装后可以使用CLI命令启动本地预览服务器：
+
+```bash
+# 使用 npx
+npx xzx-icon-vue2 preview
+
+# 或者全局安装后使用
+npm install -g xzx-icon-vue2
+xzx-icon-vue2 preview
+
+# 使用 yarn
+yarn xzx-icon-vue2 preview
+
+# 使用 pnpm
+pnpm xzx-icon-vue2 preview
+```
+
+预览功能特性：
+- 🔍 **实时搜索**：按 `/` 快速聚焦搜索框，ESC 清空搜索
+- 🏷️ **分类筛选**：按类型快速筛选图标
+- 📋 **一键复制**：点击图标即可复制Vue代码
+- 📱 **响应式设计**：支持移动端浏览
+
 ### CDN 使用
 
 ```html

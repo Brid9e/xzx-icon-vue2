@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XZX Icon Vue2 - 图标预览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .stats {
+      background: rgba(255,255,255,0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .controls {
+      background: rgba(255,255,255,0.95);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: 2px solid #e1e5e9;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-tag {
+      padding: 8px 16px;
+      background: #f5f5f5;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .filter-tag:hover {
+      background: #e1e5e9;
+    }
+
+    .filter-tag.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .icons-grid {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+    }
+
+    .icon-item {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #f5f5f5;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .icon-item:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .icon-item.copied {
+      border-color: #52c41a;
+      background: #f6ffed;
+    }
+
+    .icon-display {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #333;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-name {
+      font-size: 12px;
+      color: #666;
+      word-break: break-all;
+      line-height: 1.3;
+    }
+
+    .copy-tooltip {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .copy-tooltip.show {
+      opacity: 1;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+
+    .no-results .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+
+    .loading .spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .icons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .icon-item {
+        padding: 15px;
+      }
+
+      .icon-display {
+        font-size: 24px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🎨 XZX Icon Vue2</h1>
+      <p>精美的 Vue2 图标组件库</p>
+    </header>
+
+    <div class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 id="total-count">-</h3>
+          <p>总图标数</p>
+        </div>
+        <div class="stat-item">
+          <h3 id="filtered-count">-</h3>
+          <p>当前显示</p>
+        </div>
+        <div class="stat-item">
+          <h3>Vue2</h3>
+          <p>兼容版本</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="🔍 搜索图标名称... (按 / 快速聚焦，ESC 清空)"
+          autocomplete="off"
+        >
+        <div class="search-icon">⌕</div>
+      </div>
+
+      <div class="filters">
+        <span style="color: #666; margin-right: 10px;">快速筛选:</span>
+        <div class="filter-tag active" data-filter="all">全部</div>
+        <div class="filter-tag" data-filter="filled">填充类</div>
+        <div class="filter-tag" data-filter="one">单色类</div>
+        <div class="filter-tag" data-filter="arrow">箭头类</div>
+        <div class="filter-tag" data-filter="file">文件类</div>
+        <div class="filter-tag" data-filter="edit">编辑类</div>
+        <div class="filter-tag" data-filter="close">关闭类</div>
+      </div>
+    </div>
+
+    <div id="icons-container">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>正在加载图标...</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        基于 <a href="https://www.npmjs.com/package/@xzx-design/icons-svg" target="_blank" rel="noopener">@xzx-design/icons-svg</a> 构建
+        | 点击图标复制 Vue 代码
+      </p>
+    </footer>
+  </div>
+
+  <!-- Vue2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- 本地图标库 -->
+  <script src="/lib/index.umd.js"></script>
+
+  <script>
+    // 全局变量存储Vue实例
+    let vueApp = null
+
+    // 复制图标代码功能
+    function copyIconCode(iconName, element) {
+      const code = `<xzx-icon name="${iconName}" size="24"></xzx-icon>`
+
+      // 创建临时元素复制到剪贴板
+      const textarea = document.createElement('textarea')
+      textarea.value = code
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+
+      // 显示复制成功提示
+      element.classList.add('copied')
+      const tooltip = element.querySelector('.copy-tooltip')
+      tooltip.textContent = '已复制！'
+      tooltip.classList.add('show')
+
+      setTimeout(() => {
+        element.classList.remove('copied')
+        tooltip.classList.remove('show')
+        tooltip.textContent = '点击复制代码'
+      }, 1500)
+
+      // 更新统计
+      if (vueApp) {
+        vueApp.copyCount++
+      }
+    }
+
+    // 页面加载完成后初始化Vue应用
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('🚀 预览页面开始初始化...')
+
+      // 简化的组件注册逻辑
+      if (window.XzxIconVue2) {
+        // 尝试不同的注册方式（按优先级）
+        if (window.XzxIconVue2.default && typeof window.XzxIconVue2.default.install === 'function') {
+          Vue.use(window.XzxIconVue2.default)
+          console.log('✅ 使用 default.install 注册组件')
+        } else if (typeof window.XzxIconVue2.install === 'function') {
+          Vue.use(window.XzxIconVue2)
+          console.log('✅ 使用 install 注册组件')
+        } else if (window.XzxIconVue2.XzxIcon) {
+          Vue.component('XzxIcon', window.XzxIconVue2.XzxIcon)
+          console.log('✅ 手动注册组件')
+        } else if (window.XzxIconVue2.default && window.XzxIconVue2.default.XzxIcon) {
+          Vue.component('XzxIcon', window.XzxIconVue2.default.XzxIcon)
+          console.log('✅ 通过 default 手动注册组件')
+        }
+      } else {
+        console.error('❌ XzxIconVue2 全局变量未找到')
+      }
+
+      // Vue 应用
+      vueApp = new Vue({
+        el: '.container',
+        data: {
+          allIcons: [],
+          filteredIcons: [],
+          searchQuery: '',
+          activeFilter: 'all',
+          loading: true,
+          copyCount: 0
+        },
+        async mounted() {
+          console.log('🎯 Vue应用已挂载')
+          await this.loadIcons()
+          this.setupEventListeners()
+
+          // 添加渲染检查
+          this.$nextTick(() => {
+            setTimeout(() => {
+              const iconElements = document.querySelectorAll('.icon-display xzx-icon')
+              const svgElements = document.querySelectorAll('.icon-display svg')
+              console.log(`🔍 图标元素: ${iconElements.length}, SVG元素: ${svgElements.length}`)
+
+              if (iconElements.length > 0 && svgElements.length === 0) {
+                console.error('❌ 图标组件未正确渲染为SVG')
+              } else if (svgElements.length > 0) {
+                console.log('✅ 图标渲染成功')
+              }
+            }, 200)
+          })
+        },
+        methods: {
+          async loadIcons() {
+            try {
+              const response = await fetch('/api/icons')
+              const data = await response.json()
+              this.allIcons = data.icons || []
+              this.filteredIcons = [...this.allIcons]
+
+              document.getElementById('total-count').textContent = this.allIcons.length
+              document.getElementById('filtered-count').textContent = this.filteredIcons.length
+
+              this.renderIcons()
+              this.loading = false
+            } catch (error) {
+              console.error('加载图标失败:', error)
+              this.showError()
+            }
+          },
+
+          setupEventListeners() {
+            // 搜索功能
+            const searchInput = document.getElementById('search-input')
+            searchInput.addEventListener('input', (e) => {
+              this.searchQuery = e.target.value.toLowerCase()
+              this.filterIcons()
+            })
+
+            // 筛选标签
+            document.querySelectorAll('.filter-tag').forEach(tag => {
+              tag.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'))
+                e.target.classList.add('active')
+                this.activeFilter = e.target.dataset.filter
+                this.filterIcons()
+              })
+            })
+
+            // 键盘快捷键
+            document.addEventListener('keydown', (e) => {
+              if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+                e.preventDefault()
+                searchInput.focus()
+              }
+              if (e.key === 'Escape') {
+                searchInput.blur()
+                searchInput.value = ''
+                this.searchQuery = ''
+                this.filterIcons()
+              }
+            })
+          },
+
+          filterIcons() {
+            let filtered = [...this.allIcons]
+
+            // 文本搜索
+            if (this.searchQuery) {
+              filtered = filtered.filter(icon =>
+                icon.toLowerCase().includes(this.searchQuery)
+              )
+            }
+
+            // 分类筛选
+            if (this.activeFilter !== 'all') {
+              filtered = filtered.filter(icon => {
+                switch (this.activeFilter) {
+                  case 'filled':
+                    return icon.includes('filled')
+                  case 'one':
+                    return icon.includes('one')
+                  case 'arrow':
+                    return ['left', 'right', 'up', 'down', 'arrow'].some(word => icon.includes(word))
+                  case 'file':
+                    return icon.includes('file')
+                  case 'edit':
+                    return ['edit', 'write', 'pen', 'pencil'].some(word => icon.includes(word))
+                  case 'close':
+                    return ['close', 'delete', 'remove', 'minus'].some(word => icon.includes(word))
+                  default:
+                    return true
+                }
+              })
+            }
+
+            this.filteredIcons = filtered
+            document.getElementById('filtered-count').textContent = filtered.length
+            this.renderIcons()
+          },
+
+          renderIcons() {
+            const container = document.getElementById('icons-container')
+
+            if (this.filteredIcons.length === 0) {
+              container.innerHTML = `
+                <div class="no-results">
+                  <div class="icon">🔍</div>
+                  <h3>未找到匹配的图标</h3>
+                  <p>尝试使用其他关键词搜索，或按 Esc 重置搜索</p>
+                </div>
+              `
+              return
+            }
+
+            const iconsHTML = this.filteredIcons.map(iconName => `
+              <div class="icon-item" data-icon="${iconName}" onclick="copyIconCode('${iconName}', this)">
+                <div class="icon-display">
+                  <xzx-icon name="${iconName}" size="32"></xzx-icon>
+                </div>
+                <div class="icon-name">${iconName}</div>
+                <div class="copy-tooltip">点击复制代码</div>
+              </div>
+            `).join('')
+
+            container.innerHTML = `<div class="icons-grid">${iconsHTML}</div>`
+
+            // 等待DOM更新后重新编译Vue组件
+            this.$nextTick(() => {
+              // 获取新插入的图标元素并手动编译
+              const newIconElements = container.querySelectorAll('xzx-icon')
+              console.log(`🔄 正在编译 ${newIconElements.length} 个图标组件`)
+
+              // 使用Vue的编译方法重新编译新插入的元素
+              if (newIconElements.length > 0) {
+                newIconElements.forEach(el => {
+                  if (!el.__vue__) {
+                    // 手动创建Vue组件实例
+                    new Vue({
+                      el: el,
+                      components: {
+                        'xzx-icon': Vue.options.components.XzxIcon
+                      }
+                    })
+                  }
+                })
+              }
+            })
+          },
+
+          showError() {
+            document.getElementById('icons-container').innerHTML = `
+              <div class="no-results">
+                <div class="icon">❌</div>
+                <h3>加载失败</h3>
+                <p>请检查网络连接或稍后重试</p>
+              </div>
+            `
+            this.loading = false
+          }
+        }
+      })
+    })
+  </script>
+</body>
+</html>

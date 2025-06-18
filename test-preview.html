@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图标测试</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .icon-test {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>图标组件测试</h1>
+
+  <div id="app">
+    <div class="icon-test">
+      <xzx-icon name="search" size="24"></xzx-icon>
+      <span>搜索图标</span>
+    </div>
+
+    <div class="icon-test">
+      <xzx-icon name="camera" size="32" color="red"></xzx-icon>
+      <span>相机图标 (红色)</span>
+    </div>
+
+    <div class="icon-test">
+      <xzx-icon name="like" size="28" color="blue"></xzx-icon>
+      <span>喜欢图标 (蓝色)</span>
+    </div>
+  </div>
+
+  <!-- Vue2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- 本地图标库 -->
+  <script src="./lib/index.umd.js"></script>
+
+  <script>
+    // 注册组件
+    if (window.XzxIconVue2) {
+      Vue.use(window.XzxIconVue2)
+      console.log('✅ 组件已注册')
+    } else {
+      console.error('❌ 组件库未找到')
+    }
+
+    // 创建Vue应用
+    new Vue({
+      el: '#app',
+      mounted() {
+        console.log('Vue应用已挂载')
+      }
+    })
+  </script>
+</body>
+</html>

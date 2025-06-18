@@ -1,11 +1,11 @@
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
+const resolve = require('@rollup/plugin-node-resolve').default
+const commonjs = require('@rollup/plugin-commonjs').default
+const babel = require('@rollup/plugin-babel').default
+const terser = require('@rollup/plugin-terser').default
 
 const pkg = require('./package.json')
 
-export default [
+module.exports = [
   // ES Module build
   {
     input: 'src/index.js',
@@ -19,7 +19,7 @@ export default [
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        babelrc: true
+        babelHelpers: 'bundled'
       })
     ]
   },
@@ -37,7 +37,7 @@ export default [
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        babelrc: true
+        babelHelpers: 'bundled'
       })
     ]
   },
@@ -47,14 +47,18 @@ export default [
     output: {
       file: 'lib/index.umd.js',
       format: 'umd',
-      name: 'XzxIconVue2'
+      name: 'XzxIconVue2',
+      globals: {
+        'vue': 'Vue'
+      }
     },
+    external: ['vue'],
     plugins: [
       resolve(),
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        babelrc: true
+        babelHelpers: 'bundled'
       })
     ]
   },
@@ -64,14 +68,18 @@ export default [
     output: {
       file: 'lib/index.umd.min.js',
       format: 'umd',
-      name: 'XzxIconVue2'
+      name: 'XzxIconVue2',
+      globals: {
+        'vue': 'Vue'
+      }
     },
+    external: ['vue'],
     plugins: [
       resolve(),
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        babelrc: true
+        babelHelpers: 'bundled'
       }),
       terser()
     ]
