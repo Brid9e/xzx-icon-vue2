@@ -182,6 +182,10 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M24.707 9.565 9.858 24.415a9 9 0 0 0 0 12.727v0a9 9 0 0 0 12.728 0l17.678-17.677a6 6 0 0 0 0-8.486v0a6 6 0 0 0-8.486 0L14.101 28.657a3 3 0 0 0 0 4.243v0a3 3 0 0 0 4.242 0l14.85-14.85\"\n    data-follow-stroke=\"currentColor\" />"
   },
+  "mail-open": {
+    "viewBox": "0 0 48 48",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M44 18v21.818C44 41.023 43.105 42 42 42H6c-1.105 0-2-.977-2-2.182V18l20 13 20-13Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M4 17.784 24 4l20 13.784\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
   "male-filled": {
     "viewBox": "0 0 48 48",
     "content": "<path data-follow-stroke=\"currentColor\" d=\"M41.952 15.048v-9h-9\" stroke=\"currentColor\" stroke-width=\"4\"\n    stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n  <path data-follow-stroke=\"currentColor\" data-follow-fill=\"currentColor\"\n    d=\"M10.414 38c5.467 5.468 14.331 5.468 19.799 0a13.956 13.956 0 0 0 4.1-9.899 13.96 13.96 0 0 0-4.1-9.9c-5.468-5.467-14.332-5.467-19.8 0-5.467 5.468-5.467 14.332 0 19.8Z\"\n    fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linejoin=\"round\" />\n  <path data-follow-stroke=\"currentColor\" d=\"m30 18 9.952-9.952\" stroke=\"currentColor\" stroke-width=\"4\"\n    stroke-linecap=\"round\" stroke-linejoin=\"round\" />"
@@ -206,6 +210,10 @@ export const iconData = {
     "viewBox": "0 0 25 24",
     "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M4.5 15 4 20l5-1.5L18.5 9l-4-4-10 10Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M16.5 17H22m-9 3h9M17 3l3.5 3.5\"\n    data-follow-stroke=\"currentColor\"\n  />"
   },
+  "phone": {
+    "viewBox": "0 0 48 48",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M8 30h32v12a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V30ZM40 30V6a2 2 0 0 0-2-2H10a2 2 0 0 0-2 2v24\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M22 37h4\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
   "pic": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M5 10a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V10Z\" clip-rule=\"evenodd\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M14.5 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z\" clip-rule=\"evenodd\" data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"m15 24 5 4 6-7 17 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4l10-10Z\" data-follow-stroke=\"currentColor\" />"
@@ -229,6 +237,10 @@ export const iconData = {
   "preview-open": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M24 36c11.046 0 20-12 20-12s-8.954-12-20-12S4 24 4 24s8.954 12 20 12Z\" data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M24 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\"\n    data-follow-stroke=\"currentColor\" />"
+  },
+  "qq1": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M3.229 13.604c.34-1.084 1.015-1.92 1.52-2.428a.552.552 0 0 0 .154-.476 2.174 2.174 0 0 1-.028-.339c0-.478.14-.95.417-1.4a.557.557 0 0 0 .081-.327 1.741 1.741 0 0 1-.005-.128A6.513 6.513 0 0 1 11.872 2a6.513 6.513 0 0 1 6.504 6.506c0 .038-.002.076-.005.114a.553.553 0 0 0 .083.328c.282.453.425.929.425 1.413 0 .114-.01.229-.03.351a.55.55 0 0 0 .152.48c.5.505 1.167 1.335 1.505 2.412.602 1.915.39 3.692-.183 3.885-.298.1-.65-.214-.87-.474a.557.557 0 0 0-.49-.195.561.561 0 0 0-.437.292c-.2.372-.434.726-.698 1.058a.552.552 0 0 0 .226.856c.785.324 1.235.792 1.235 1.286 0 .93-1.556 1.688-3.467 1.688-1.24 0-2.394-.327-3.01-.854a.566.566 0 0 0-.41-.134 6.64 6.64 0 0 1-1.068 0 .55.55 0 0 0-.411.133c-.618.528-1.771.855-3.011.855-1.912 0-3.467-.757-3.467-1.688 0-.495.452-.965 1.24-1.288a.556.556 0 0 0 .227-.856 7.21 7.21 0 0 1-.697-1.06.562.562 0 0 0-.438-.293.563.563 0 0 0-.49.196c-.221.26-.57.581-.874.477-.575-.192-.786-1.968-.184-3.884Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M4.868 11s4.221 1 7 1c2.778 0 7-1 7-1\"\n    data-follow-stroke=\"currentColor\"\n  />"
   },
   "reduce-one-filled": {
     "viewBox": "0 0 48 48",
@@ -297,6 +309,10 @@ export const iconData = {
   "wangfei": {
     "viewBox": "0 0 24 24",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"2\" stroke=\"currentColor\"\n    d=\"M19.65 3H4.35C3.604 3 3 3.672 3 4.5v12c0 .828.604 1.5 1.35 1.5h15.3c.746 0 1.35-.672 1.35-1.5v-12c0-.828-.604-1.5-1.35-1.5ZM12 18v3M10.5 8 6 13M16.5 8 12 13M5 21h14\"\n    data-follow-stroke=\"currentColor\" />"
+  },
+  "wechat": {
+    "viewBox": "0 0 48 48",
+    "content": "<path\n    d=\"M36.997 21.711C36.843 13.008 29.74 6 21 6 12.163 6 5 13.163 5 22c0 4.17 1.595 7.968 4.209 10.815l-1.199 7.21 7.115-3.055c3.135 1.042 6.093 1.303 8.875.782\"\n    clip-rule=\"evenodd\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M36.997 21.711C36.843 13.008 29.74 6 21 6 12.163 6 5 13.163 5 22c0 4.17 1.595 7.968 4.209 10.815l-1.199 7.21 7.115-3.055c3.135 1.042 6.093 1.303 8.875.782\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    fill=\"currentColor\"\n    d=\"M15.125 20.467a2.258 2.258 0 0 0 2.25-2.267 2.258 2.258 0 0 0-2.25-2.267 2.258 2.258 0 0 0-2.25 2.267 2.258 2.258 0 0 0 2.25 2.267ZM24.125 20.467a2.258 2.258 0 0 0 2.25-2.267 2.258 2.258 0 0 0-2.25-2.267 2.258 2.258 0 0 0-2.25 2.267 2.258 2.258 0 0 0 2.25 2.267Z\"\n    data-follow-fill=\"currentColor\"\n  />\n  <path\n    d=\"M38.762 39.93A10.453 10.453 0 0 1 32.5 42C26.701 42 22 37.299 22 31.5S26.701 21 32.5 21 43 25.701 43 31.5c0 1.6-.358 3.116-.998 4.473\"\n    clip-rule=\"evenodd\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M38.762 39.93A10.453 10.453 0 0 1 32.5 42C26.701 42 22 37.299 22 31.5S26.701 21 32.5 21 43 25.701 43 31.5c0 1.6-.358 3.116-.998 4.473\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    d=\"M42.002 35.973 43 42l-4.238-2.07\"\n    clip-rule=\"evenodd\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M42.002 35.973 43 42l-4.238-2.07\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    fill=\"currentColor\"\n    d=\"M35.688 30.8A1.694 1.694 0 0 1 34 29.1c0-.939.755-1.7 1.688-1.7.931 0 1.687.761 1.687 1.7s-.755 1.7-1.688 1.7ZM28.938 30.8a1.694 1.694 0 0 1-1.688-1.7c0-.939.756-1.7 1.688-1.7.931 0 1.687.761 1.687 1.7s-.756 1.7-1.688 1.7Z\"\n    data-follow-fill=\"currentColor\"\n  />"
   },
   "wodedaijiao": {
     "viewBox": "0 0 24 24",
