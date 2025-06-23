@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图标组件调试</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .debug-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .test-icon {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .success { border-color: #52c41a; background: #f6ffed; }
+    .error { border-color: #ff4d4f; background: #fff1f0; }
+  </style>
+</head>
+<body>
+  <h1>🔧 图标组件调试页面</h1>
+
+  <div class="debug-section">
+    <h2>📊 全局变量检查</h2>
+    <div id="global-check">检查中...</div>
+  </div>
+
+  <div class="debug-section">
+    <h2>🧪 组件测试</h2>
+    <div id="app">
+      <div class="test-icon" id="test1">
+        <xzx-icon name="search" size="32"></xzx-icon>
+        <br>搜索图标
+      </div>
+      <div class="test-icon" id="test2">
+        <xzx-icon name="camera" size="32" color="red"></xzx-icon>
+        <br>相机图标
+      </div>
+      <div class="test-icon" id="test3">
+        <xzx-icon name="like" size="32" color="blue"></xzx-icon>
+        <br>喜欢图标
+      </div>
+    </div>
+  </div>
+
+  <div class="debug-section">
+    <h2>📝 日志输出</h2>
+    <div id="logs" style="font-family: monospace; background: #f0f0f0; padding: 10px; border-radius: 4px; max-height: 300px; overflow-y: auto;">
+    </div>
+  </div>
+
+  <!-- Vue2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- 本地图标库 -->
+  <script src="./lib/index.umd.js"></script>
+
+  <script>
+    // 日志函数
+    function log(message, type = 'info') {
+      const timestamp = new Date().toLocaleTimeString()
+      const logElement = document.getElementById('logs')
+      const color = type === 'error' ? 'red' : type === 'success' ? 'green' : 'black'
+      logElement.innerHTML += `<div style="color: ${color}">[${timestamp}] ${message}</div>`
+      logElement.scrollTop = logElement.scrollHeight
+      console.log(message)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      log('🚀 开始调试...')
+
+      // 1. 检查全局变量
+      const globalCheck = document.getElementById('global-check')
+
+      log('🔍 检查 window.XzxIconVue2...')
+      if (window.XzxIconVue2) {
+        log('✅ window.XzxIconVue2 存在', 'success')
+        log(`📋 类型: ${typeof window.XzxIconVue2}`)
+        log(`📋 键: ${Object.keys(window.XzxIconVue2).join(', ')}`)
+
+        if (window.XzxIconVue2.default) {
+          log(`📋 default 键: ${Object.keys(window.XzxIconVue2.default).join(', ')}`)
+        }
+
+        globalCheck.innerHTML = `
+          <div style="color: green;">✅ XzxIconVue2 已加载</div>
+          <div>类型: ${typeof window.XzxIconVue2}</div>
+          <div>键: ${Object.keys(window.XzxIconVue2).join(', ')}</div>
+          ${window.XzxIconVue2.default ? `<div>default键: ${Object.keys(window.XzxIconVue2.default).join(', ')}</div>` : ''}
+        `
+      } else {
+        log('❌ window.XzxIconVue2 不存在', 'error')
+        globalCheck.innerHTML = '<div style="color: red;">❌ XzxIconVue2 未加载</div>'
+      }
+
+      // 2. 尝试注册组件
+      let registered = false
+
+      if (window.XzxIconVue2) {
+        try {
+          if (window.XzxIconVue2.default && typeof window.XzxIconVue2.default.install === 'function') {
+            Vue.use(window.XzxIconVue2.default)
+            log('✅ 使用 XzxIconVue2.default.install() 注册', 'success')
+            registered = true
+          } else if (typeof window.XzxIconVue2.install === 'function') {
+            Vue.use(window.XzxIconVue2)
+            log('✅ 使用 XzxIconVue2.install() 注册', 'success')
+            registered = true
+          } else if (window.XzxIconVue2.XzxIcon) {
+            Vue.component('XzxIcon', window.XzxIconVue2.XzxIcon)
+            log('✅ 手动注册 XzxIcon 组件', 'success')
+            registered = true
+          } else if (window.XzxIconVue2.default && window.XzxIconVue2.default.XzxIcon) {
+            Vue.component('XzxIcon', window.XzxIconVue2.default.XzxIcon)
+            log('✅ 手动注册 XzxIcon 组件 (通过 default)', 'success')
+            registered = true
+          } else {
+            log('❌ 无法找到有效的注册方法', 'error')
+          }
+        } catch (error) {
+          log(`❌ 注册组件时出错: ${error.message}`, 'error')
+        }
+      }
+
+      // 3. 创建Vue实例
+      const app = new Vue({
+        el: '#app',
+        mounted() {
+          log('🎯 Vue应用已挂载')
+
+          // 检测组件是否成功渲染
+          setTimeout(() => {
+            const testElements = document.querySelectorAll('.test-icon')
+            testElements.forEach((el, index) => {
+              const svg = el.querySelector('svg')
+              if (svg) {
+                el.classList.add('success')
+                log(`✅ 测试 ${index + 1} 成功渲染`, 'success')
+              } else {
+                el.classList.add('error')
+                log(`❌ 测试 ${index + 1} 渲染失败`, 'error')
+              }
+            })
+          }, 500)
+        }
+      })
+
+      log('🏁 调试完成')
+    })
+  </script>
+</body>
+</html>

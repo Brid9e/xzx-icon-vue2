@@ -95,63 +95,7 @@
 <body>
   <div id="app">
     <div class="container">
-      <h1>🎨 Vue2 + XZX Icon 内联版本示例</h1>
-
-      <!-- 状态显示 -->
-      <div class="status success">
-        ✅ 内联SVG图标已就绪 (无需加载外部文件)
-        <br>
-        <small>图标数量: {{ iconCount }}</small>
-      </div>
-
-      <!-- 基本使用 -->
-      <h2>📋 基本使用</h2>
-      <div class="icon-grid">
-        <div class="icon-item" v-for="icon in basicIcons" :key="icon.name">
-          <xzx-icon :name="icon.name" :size="icon.size || 24" :color="icon.color || 'currentColor'"></xzx-icon>
-          <div class="icon-name">{{ icon.name }}</div>
-        </div>
-      </div>
-
-      <!-- 不同尺寸 -->
-      <h2>📏 不同尺寸</h2>
-      <div class="size-demo">
-        <div>16px: <xzx-icon name="camera" size="16" color="#1890ff"></xzx-icon></div>
-        <div>24px: <xzx-icon name="camera" size="24" color="#1890ff"></xzx-icon></div>
-        <div>32px: <xzx-icon name="camera" size="32" color="#1890ff"></xzx-icon></div>
-        <div>48px: <xzx-icon name="camera" size="48" color="#1890ff"></xzx-icon></div>
-      </div>
-
-      <!-- 按钮中使用 -->
-      <h2>🔘 按钮中使用</h2>
-      <div>
-        <button class="btn btn-primary" @click="handleSave">
-          <xzx-icon name="check-small" size="16"></xzx-icon>
-          保存
-        </button>
-        <button class="btn" @click="handleDelete">
-          <xzx-icon name="delete" size="16" color="#ff4d4f"></xzx-icon>
-          删除
-        </button>
-        <button class="btn" @click="handleRefresh">
-          <xzx-icon name="refresh" size="16"></xzx-icon>
-          刷新
-        </button>
-        <button class="btn" @click="handleUpload">
-          <xzx-icon name="upload" size="16"></xzx-icon>
-          上传
-        </button>
-      </div>
-
-      <!-- 彩色图标 -->
-      <h2>🎨 彩色图标</h2>
-      <div class="color-demo">
-        <xzx-icon name="like" size="32" color="#ff4d4f"></xzx-icon>
-        <xzx-icon name="all-application" size="32" color="#52c41a"></xzx-icon>
-        <xzx-icon name="setting-one" size="32" color="#1890ff"></xzx-icon>
-        <xzx-icon name="camera" size="32" color="#ff7a45"></xzx-icon>
-      </div>
-
+      <h1>🎨 Vue2 + XZX Icon</h1>
       <!-- 所有可用图标 -->
       <h2>📚 所有可用图标 ({{ iconCount }}个)</h2>
       <div class="icon-grid">
