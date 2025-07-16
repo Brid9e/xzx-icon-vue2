@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@xzx-design/icons-svg':
-        specifier: latest
-        version: 0.0.9
+        specifier: ^0.0.10
+        version: 0.0.10
       vue:
         specifier: ^2.6.0
         version: 2.7.16
@@ -723,8 +723,8 @@ packages:
   '@vue/compiler-sfc@2.7.16':
     resolution: {integrity: sha512-KWhJ9k5nXuNtygPU7+t1rX6baZeqOYLEforUPjgNDBnLicfHCoi48H87Q8XyLZOrNNsmhuwKqtpDQWjEFe6Ekg==}
 
-  '@xzx-design/icons-svg@0.0.9':
-    resolution: {integrity: sha512-Iwqd2TptuJUuW7YPFvQDEnauwR75sPGQNh590CAwBzLwd21XCOTqya4MsL0x4XsTAxGMXN3HXTNDWNOUjeKZ7g==}
+  '@xzx-design/icons-svg@0.0.10':
+    resolution: {integrity: sha512-SaPolEb7aKwxm7mH9NlhCTQq3nXgWg/2H8AvytK9EiqNeMqPAU3x0sLRc8oajS0yf3tjVZLXKqY/pGRQ31KFSw==}
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -2064,7 +2064,7 @@ snapshots:
     optionalDependencies:
       prettier: 2.8.8
 
-  '@xzx-design/icons-svg@0.0.9': {}
+  '@xzx-design/icons-svg@0.0.10': {}
 
   accepts@1.3.8:
     dependencies:

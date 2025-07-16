@@ -1,6 +1,6 @@
 {
   "name": "xzx-icon-vue2",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "基于 Vue2 的内联 SVG 图标组件库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -37,9 +37,6 @@
   "peerDependencies": {
     "vue": "^2.6.0"
   },
-  "dependencies": {
-    "@xzx-design/icons-svg": "latest"
-  },
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.23.0",
@@ -58,5 +55,8 @@
   "bugs": {
     "url": "https://github.com/yourusername/xzx-icon-vue2/issues"
   },
-  "homepage": "https://github.com/yourusername/xzx-icon-vue2#readme"
+  "homepage": "https://github.com/yourusername/xzx-icon-vue2#readme",
+  "dependencies": {
+    "@xzx-design/icons-svg": "^0.0.10"
+  }
 }
