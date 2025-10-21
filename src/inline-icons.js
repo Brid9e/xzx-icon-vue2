@@ -206,6 +206,10 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M9.858 32.757C6.238 33.843 4 35.343 4 37c0 3.314 8.954 6 20 6s20-2.686 20-6c0-1.657-2.239-3.157-5.858-4.243\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M24 35s13-8.496 13-18.318C37 9.678 31.18 4 24 4S11 9.678 11 16.682C11 26.504 24 35 24 35Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M24 22a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\"\n    data-follow-stroke=\"currentColor\"\n  />"
   },
+  "lose-filled": {
+    "viewBox": "0 0 20 20",
+    "content": "<path data-follow-fill=\"currentColor\" fill=\"currentColor\" d=\"M17.259 12.776c-.592.355-2.373 1.88-3.013 1.96-.633.08-2.347-.045-3.567-.16-1.38-.13-.842-.688-.624-.748.219-.06 2.862-.203 3.745-.304.795-.092.68-.875-.216-.907-.895-.03-4.954-.305-6.318-.214-1.366.092-3.36 1.916-3.36 1.916l.075.29 2.907 2.581.388-.03s.713-.41 1.306-.534c.593-.124 3.869.237 5 .072 1.132-.164 4.047-2.604 4.687-3.135.31-.26.533-.631.468-.731-.31-.475-1.095-.287-1.478-.056ZM3.32 14.815a.56.56 0 0 0-.752-.04 39.44 39.44 0 0 1-1.162.888c-.337.232-.039.619.154.8.191.182 2.253 2.093 2.557 2.394.305.3.619.268.848.075.23-.192.76-.649 1.1-.887.34-.238.31-.51.073-.726-.235-.216-2.55-2.262-2.818-2.504Zm11.957-3.888c.63 0 1.14-.51 1.14-1.14V2.802c0-.63-.51-1.14-1.14-1.14H6.71c-.63 0-1.14.51-1.14 1.14v6.985c0 .63.51 1.14 1.14 1.14h8.568Z\"/>"
+  },
   "mail-open": {
     "viewBox": "0 0 48 48",
     "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M44 18v21.818C44 41.023 43.105 42 42 42H6c-1.105 0-2-.977-2-2.182V18l20 13 20-13Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"4\"\n    stroke=\"currentColor\"\n    d=\"M4 17.784 24 4l20 13.784\"\n    data-follow-stroke=\"currentColor\"\n  />"
@@ -217,6 +221,10 @@ export const iconData = {
   "male": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M41.952 15.048v-9h-9\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M10.414 38c5.467 5.468 14.331 5.468 19.799 0a13.956 13.956 0 0 0 4.1-9.899c0-3.583-1.367-7.166-4.1-9.9-5.468-5.467-14.332-5.467-19.8 0-5.467 5.468-5.467 14.332 0 19.8Z\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"m30 18 9.952-9.952\"\n    data-follow-stroke=\"currentColor\" />"
+  },
+  "message-filled": {
+    "viewBox": "0 0 24 24",
+    "content": "<path\n    data-follow-fill=\"currentColor\"\n    d=\"M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11H2a1 1 0 0 1-1-1V12C1 5.925 5.925 1 12 1ZM7 16a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2H7Zm0-4a1 1 0 1 0 0 2h9a1 1 0 1 0 0-2H7Zm0-4a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2H7Z\"\n    fill=\"currentColor\"\n  />"
   },
   "minus": {
     "viewBox": "0 0 48 48",
@@ -241,6 +249,10 @@ export const iconData = {
   "pic": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M5 10a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V10Z\" clip-rule=\"evenodd\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M14.5 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z\" clip-rule=\"evenodd\" data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"m15 24 5 4 6-7 17 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4l10-10Z\" data-follow-stroke=\"currentColor\" />"
+  },
+  "pickup-filled": {
+    "viewBox": "0 0 20 20",
+    "content": "<path data-follow-fill=\"currentColor\" fill=\"currentColor\" d=\"M8.75 15.937c0-.582-.177-1.122-.48-1.57-.337.14-.714.273-1.06.393-.342.12-.665.195-.96.22-.907.075-1.426-.306-1.7-.638a1.893 1.893 0 0 1-.325-.621 2.798 2.798 0 0 0-1.1 2.216 2.813 2.813 0 0 0 5.625 0Z\"/><path data-follow-fill=\"currentColor\" fill=\"currentColor\" d=\"M15.024 1.023c-.521.148-.944.417-1.516.716-3.516 1.836-7.666 1.533-8.593 3.007-1.073 2.019-1.91 3.485-1.912 4.204L3 8.956c.023.78.767 2.282 1.136 2.967a4.063 4.063 0 0 1 1.26-1.59 12.4 12.4 0 0 1 .726-.526 9.69 9.69 0 0 0-.424-1.102c.419-.289 1.018-1.035 1.226-1.575.517.004 1.181-.124 1.749-.27.25.267.507.53.85.781-.154.56-.276 1.057-.915 1.499-.872.603-1.67.842-2.714 1.683-.63.506-1.018 1.102-1.197 1.783-.123.473.185 2.071 2.266 1.295.392-.147.914-.334 1.362-.557.93-.461 2.067-1.593 2.383-1.751.595-.299 1.945-.416 3.371-1.368.49-.327.862-.808 1.034-1.313 1.299-2.532 2.378-2.33 2.681-2.834.662-1.104-1.454-5.43-2.77-5.055Z\"/>"
   },
   "plan": {
     "viewBox": "0 0 48 48",
@@ -273,6 +285,10 @@ export const iconData = {
   "refresh": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M42 8v16M6 24v16M42 24c0-9.941-8.059-18-18-18a17.947 17.947 0 0 0-12.952 5.5M6 24c0 9.941 8.059 18 18 18a17.94 17.94 0 0 0 12.5-5.048\"\n    data-follow-stroke=\"currentColor\" />"
+  },
+  "release-filled": {
+    "viewBox": "0 0 48 48",
+    "content": "<path data-follow-fill=\"currentColor\" d=\"M41.42 7.309s3.885-1.515 3.56 2.164c-.107 1.515-1.078 6.818-1.834 12.553l-2.59 16.99s-.216 2.489-2.159 2.922c-1.942.432-4.856-1.515-5.396-1.948-.432-.325-8.094-5.195-10.792-7.575-.756-.65-1.62-1.948.108-3.463L33.648 18.13c1.295-1.298 2.59-4.328-2.806-.649l-15.11 10.28s-1.727 1.083-4.964.109l-7.016-2.165s-2.59-1.623 1.835-3.246c10.793-5.086 24.068-10.28 35.831-15.15Z\" fill=\"currentColor\"/>"
   },
   "right": {
     "viewBox": "0 0 48 48",
