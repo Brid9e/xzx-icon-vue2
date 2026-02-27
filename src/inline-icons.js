@@ -110,6 +110,10 @@ export const iconData = {
     "viewBox": "0 0 48 48",
     "content": "<g clip-path=\"url(#a)\" stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    data-follow-stroke=\"currentColor\">\n    <path\n      d=\"M38.379 9.851c-5.468-5.467-14.332-5.467-19.8 0a13.956 13.956 0 0 0-4.1 9.9c0 3.583 1.367 7.166 4.1 9.9 5.468 5.467 14.332 5.467 19.8 0 5.467-5.468 5.467-14.332 0-19.8Z\" />\n    <path stroke-linecap=\"round\" d=\"M18.464 29.535 5.736 42.263M19.171 41.556 6.443 28.828\" />\n  </g>\n  <defs>\n    <clipPath id=\"a\">\n      <path fill=\"currentColor\" d=\"M0 0h48v48H0z\" data-follow-fill=\"currentColor\" />\n    </clipPath>\n  </defs>"
   },
+  "file-addition": {
+    "viewBox": "0 0 48 48",
+    "content": "<path data-follow-stroke=\"currentColor\" d=\"M40 23v-9L31 4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2h12m11-15v14m-7-7h14\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path data-follow-stroke=\"currentColor\" d=\"M30 4v10h10\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+  },
   "file-code": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"M10 44h28a2 2 0 0 0 2-2V14H30V4H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2ZM30 4l10 10\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    d=\"m27 24 5 5-5 5M21 24l-5 5 5 5\" data-follow-stroke=\"currentColor\" />"
@@ -186,6 +190,10 @@ export const iconData = {
     "viewBox": "0 0 24 24",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"2\" stroke=\"currentColor\"\n    d=\"M16.923 3v2.016h-.98v1.109c0 1.167.246 2.32.722 3.38l4.2 9.35c.34.758.018 1.656-.72 2.006-.194.091-.404.139-.617.139H6.471C5.66 21 5 20.323 5 19.488c0-.219.046-.435.135-.634l4.2-9.35a8.252 8.252 0 0 0 .722-3.38V5.017h-.98V3h7.846Z\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"2\" stroke=\"currentColor\"\n    d=\"M9 5.525H6.057v1.232h.736v.678c0 .713-.185 1.418-.542 2.065l-3.15 5.189a.8.8 0 0 0-.101.387c0 .51.494.924 1.103.924h1.954\"\n    data-follow-stroke=\"currentColor\" />\n  <circle stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"2\" stroke=\"currentColor\" r=\"2\" cy=\"15\" cx=\"12\"\n    data-follow-stroke=\"currentColor\" />\n  <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"2\" stroke=\"currentColor\"\n    d=\"M17.854 11A2.5 2.5 0 1 0 16 6.823\" data-follow-stroke=\"currentColor\" />"
   },
+  "keyboard": {
+    "viewBox": "0 0 48 48",
+    "content": "<path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"currentColor\"/><path fill=\"currentColor\" d=\"M15 19a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM15 27a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM24 19a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM24 27a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM33 19a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM33 27a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z\" clip-rule=\"evenodd\" fill-rule=\"evenodd\" data-follow-fill=\"currentColor\"/><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M17 33h14\" data-follow-stroke=\"currentColor\"/>"
+  },
   "left": {
     "viewBox": "0 0 48 48",
     "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M31 36 19 24l12-12\"\n    data-follow-stroke=\"currentColor\" />"
@@ -241,6 +249,10 @@ export const iconData = {
   "oneclickprocessing": {
     "viewBox": "0 0 25 24",
     "content": "<path\n    stroke-linejoin=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M4.5 15 4 20l5-1.5L18.5 9l-4-4-10 10Z\"\n    data-follow-stroke=\"currentColor\"\n  />\n  <path\n    stroke-linejoin=\"round\"\n    stroke-linecap=\"round\"\n    stroke-width=\"2\"\n    stroke=\"currentColor\"\n    d=\"M16.5 17H22m-9 3h9M17 3l3.5 3.5\"\n    data-follow-stroke=\"currentColor\"\n  />"
+  },
+  "permissions": {
+    "viewBox": "0 0 48 48",
+    "content": "<path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M20 10H6a2 2 0 0 0-2 2v26a2 2 0 0 0 2 2h36a2 2 0 0 0 2-2v-2.5\" data-follow-stroke=\"currentColor\"/><path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M10 23h8M10 31h24\" data-follow-stroke=\"currentColor\"/><circle stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" r=\"6\" cy=\"16\" cx=\"34\" data-follow-stroke=\"currentColor\"/><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M44 28.419C42.047 24.602 38 22 34 22s-5.993 1.133-8.05 3\" data-follow-stroke=\"currentColor\"/>"
   },
   "phone": {
     "viewBox": "0 0 48 48",
@@ -357,6 +369,10 @@ export const iconData = {
   "upload": {
     "viewBox": "0 0 48 48",
     "content": "<mask style=\"mask-type:alpha\" height=\"48\" width=\"48\" y=\"0\" x=\"0\" maskUnits=\"userSpaceOnUse\" id=\"a\">\n    <path fill=\"currentColor\" d=\"M48 0H0v48h48V0Z\" data-follow-fill=\"currentColor\" />\n  </mask>\n  <g mask=\"url(#a)\" stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\"\n    data-follow-stroke=\"currentColor\">\n    <path d=\"M6 24.008V42h36V24M33 15l-9-9-9 9M23.992 32V6\" />\n  </g>"
+  },
+  "voice": {
+    "viewBox": "0 0 48 48",
+    "content": "<rect stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"currentColor\" rx=\"7\" height=\"27\" width=\"14\" y=\"4\" x=\"17\" data-follow-stroke=\"currentColor\"/><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"currentColor\" d=\"M9 23c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15M24 38v6\" data-follow-stroke=\"currentColor\"/>"
   },
   "wangfei": {
     "viewBox": "0 0 24 24",
